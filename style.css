@@ -1,0 +1,108 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+}
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f1f1f1;
+  --primary-color: #bb86fc;
+  --secondary-color: #03dac6;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  scroll-behavior: smooth;
+}
+
+/* Navbar fixed top */
+.navbar {
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.navbar .nav-link {
+  color: var(--text-color) !important;
+}
+
+/* Hero Section: fondo animado con gradiente */
+.hero {
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4);
+  background-size: 600% 600%;
+  animation: gradientAnimation 15s ease infinite;
+  padding: 100px 0;
+  text-align: center;
+}
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Foto del desarrollador */
+.developer-photo {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+/* Animación del nombre */
+.animated-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+}
+.animated-name::after {
+  content: " ¡Busca la mejor! 💐";
+  animation: fadeIn 3s ease-in-out infinite alternate;
+  display: block;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Sección y títulos */
+section {
+  padding: 60px 0;
+}
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Cards de Proyectos y Experiencia con efecto hover y latido */
+.card {
+  border: 2px solid var(--primary-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  animation: heartbeat 1.5s infinite;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.03); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+/* Social Icons */
+.social-icons a {
+  color: var(--text-color);
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+.social-icons a:hover {
+  color: var(--primary-color);
+}
